@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import Social from "./social";
 import StakeIcon from "../../../assets/icons/stake.svg";
 import BondIcon from "../../../assets/icons/bond.svg";
-// import WonderlandIcon from "../../../assets/icons/wonderland-nav-header.svg";
 import FetchIcon from "../../../assets/icons/fetch-icon.png";
 import DashboardIcon from "../../../assets/icons/dashboard.svg";
 import { trim, shorten } from "../../../helpers";
@@ -49,9 +48,8 @@ function NavContent() {
     return (
         <div className="dapp-sidebar">
             <div className="branding-header">
-                {/* Atodo */}
+                <img alt="" src={FetchIcon} height="36" />
                 <Link href="https://wonderland.money" target="_blank">
-                    <img alt="" src={FetchIcon} height="36" />
                     <p style={boneStyle}>Fetch</p>
                 </Link>
 

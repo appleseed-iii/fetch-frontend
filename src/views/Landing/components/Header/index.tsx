@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./header.scss";
 // import { ReactComponent as WonderlandIcon } from "../../../../assets/icons/wonderland-icon.svg";
-import FetchIcon from "../../../../assets/icons/fetch-icon.png";
+import { ReactComponent as FetchIcon } from "../../../../assets/icons/fetch-icon.svg";
+// import FetchIcon from "../../../../assets/icons/fetch-icon.png";
 import { SvgIcon, Link, Box, Popper, Fade } from "@material-ui/core";
 import { ReactComponent as GitHub } from "../../../../assets/icons/github.svg";
 import { ReactComponent as Twitter } from "../../../../assets/icons/twitter.svg";
@@ -19,8 +20,8 @@ function Header() {
 
     return (
         <div className="landing-header">
-            {/* <SvgIcon color="primary" component={FetchIcon} viewBox="0 0 174 40" style={{ minWidth: 174, minHeight: 40 }} /> */}
-            <img src={FetchIcon} />
+            <SvgIcon color="primary" component={FetchIcon} viewBox="0 0 174 40" style={{ minWidth: 174, minHeight: 40 }} />
+            {/* <img src={FetchIcon} /> */}
             <div className="landing-header-nav-wrap">
                 <Box component="div" onMouseEnter={e => handleClick(e)} onMouseLeave={e => handleClick(e)}>
                     <p className="landing-header-nav-text">Social</p>
