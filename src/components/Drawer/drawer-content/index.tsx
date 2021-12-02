@@ -40,6 +40,7 @@ function NavContent() {
     return (
         <div className="dapp-sidebar">
             <div className="branding-header">
+                {/* Atodo */}
                 <Link href="https://wonderland.money" target="_blank">
                     <img alt="" src={WonderlandIcon} />
                 </Link>
@@ -128,15 +129,6 @@ function NavContent() {
                         </div>
                     </Link>
                 </div>
-            </div>
-            <div className="dapp-menu-doc-link">
-                <Link href="https://wonderland.gitbook.io/wonderland/" target="_blank">
-                    <img alt="" src={DocsIcon} />
-                    <p>Docs</p>
-                </Link>
-                <Link href="https://legacy.wonderland.money/" target="_blank">
-                    <p>Legacy website</p>
-                </Link>
             </div>
             <Social />
         </div>

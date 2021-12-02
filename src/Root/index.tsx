@@ -6,6 +6,7 @@ import { loadTokenPrices } from "../helpers";
 import Loading from "../components/Loader";
 
 function Root() {
+    // Atodo don't think landing page will ever come up
     const isApp = (): boolean => {
         return true; //window.location.host.includes("app");
     };
