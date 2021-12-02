@@ -7,7 +7,7 @@ export const metamaskErrorWrap = (err: any, dispatch: Dispatch) => {
 
     if (err.code && err.code === -32603) {
         if (err.message.indexOf("ds-math-sub-underflow") >= 0) {
-            text = "You may be trying to bond more than your balance! Error code: 32603. Message: ds-math-sub-underflow";
+            text = "You may be trying to bone more than your balance! Error code: 32603. Message: ds-math-sub-underflow";
         }
 
         if (err.data && err.data.message) {
@@ -18,8 +18,8 @@ export const metamaskErrorWrap = (err: any, dispatch: Dispatch) => {
             text = "Insufficient balance to make a transaction";
         }
 
-        if (err.data && err.data.message && err.data.message.includes("Bond too small")) {
-            text = "Bond too small";
+        if (err.data && err.data.message && err.data.message.includes("bone too small")) {
+            text = "bone too small";
         }
     }
 

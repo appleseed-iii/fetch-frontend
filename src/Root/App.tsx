@@ -112,17 +112,17 @@ function App() {
                 </Route>
 
                 <Route exact path="/">
-                    <Redirect to="/stake" />
+                    <Redirect to="/stick" />
                 </Route>
 
-                <Route path="/stake">
+                <Route path="/stick">
                     <Stake />
                 </Route>
 
-                <Route path="/mints">
+                <Route path="/bone">
                     {bonds.map(bond => {
                         return (
-                            <Route exact key={bond.name} path={`/mints/${bond.name}`}>
+                            <Route exact key={bond.name} path={`/bone/${bond.name}`}>
                                 <Bond bond={bond} />
                             </Route>
                         );

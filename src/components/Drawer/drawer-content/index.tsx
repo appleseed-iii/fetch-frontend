@@ -3,7 +3,8 @@ import { NavLink } from "react-router-dom";
 import Social from "./social";
 import StakeIcon from "../../../assets/icons/stake.svg";
 import BondIcon from "../../../assets/icons/bond.svg";
-import WonderlandIcon from "../../../assets/icons/wonderland-nav-header.svg";
+// import WonderlandIcon from "../../../assets/icons/wonderland-nav-header.svg";
+import FetchIcon from "../../../assets/icons/fetch-icon.png";
 import DashboardIcon from "../../../assets/icons/dashboard.svg";
 import { trim, shorten } from "../../../helpers";
 import { useAddress } from "../../../hooks";
@@ -14,6 +15,14 @@ import "./drawer-content.scss";
 import DocsIcon from "../../../assets/icons/stake.svg";
 import GlobeIcon from "../../../assets/icons/wonderglobe.svg";
 import classnames from "classnames";
+import Typography from "@material-ui/core/Typography";
+
+const boneStyle = {
+    fontFamily: "Montserrat Bold",
+    // fontWeight: "bold",
+    fontSize: "20px",
+    color: "#FFFFFF",
+};
 
 function NavContent() {
     const [isActive] = useState();
@@ -25,10 +34,10 @@ function NavContent() {
         if (currentPath.indexOf("dashboard") >= 0 && page === "dashboard") {
             return true;
         }
-        if (currentPath.indexOf("stake") >= 0 && page === "stake") {
+        if (currentPath.indexOf("stick") >= 0 && page === "stick") {
             return true;
         }
-        if (currentPath.indexOf("mints") >= 0 && page === "mints") {
+        if (currentPath.indexOf("bone") >= 0 && page === "bone") {
             return true;
         }
         if (currentPath.indexOf("calculator") >= 0 && page === "calculator") {
@@ -42,7 +51,8 @@ function NavContent() {
             <div className="branding-header">
                 {/* Atodo */}
                 <Link href="https://wonderland.money" target="_blank">
-                    <img alt="" src={WonderlandIcon} />
+                    <img alt="" src={FetchIcon} height="36" />
+                    <p style={boneStyle}>Fetch</p>
                 </Link>
 
                 {address && (
@@ -72,37 +82,37 @@ function NavContent() {
 
                     <Link
                         component={NavLink}
-                        to="/stake"
+                        to="/stick"
                         isActive={(match: any, location: any) => {
-                            return checkPage(location, "stake");
+                            return checkPage(location, "stick");
                         }}
                         className={classnames("button-dapp-menu", { active: isActive })}
                     >
                         <div className="dapp-menu-item">
                             <img alt="" src={StakeIcon} />
-                            <p>Stake</p>
+                            <p>Stick</p>
                         </div>
                     </Link>
 
                     <Link
                         component={NavLink}
                         id="bond-nav"
-                        to="/mints"
+                        to="/bone"
                         isActive={(match: any, location: any) => {
-                            return checkPage(location, "mints");
+                            return checkPage(location, "bone");
                         }}
                         className={classnames("button-dapp-menu", { active: isActive })}
                     >
                         <div className="dapp-menu-item">
                             <img alt="" src={BondIcon} />
-                            <p>Mint</p>
+                            <p>Bone</p>
                         </div>
                     </Link>
 
                     <div className="bond-discounts">
-                        <p>Mint discounts</p>
+                        <p>Bone discounts</p>
                         {bonds.map((bond, i) => (
-                            <Link component={NavLink} to={`/mints/${bond.name}`} key={i} className={"bond"}>
+                            <Link component={NavLink} to={`/bone/${bond.name}`} key={i} className={"bond"}>
                                 {!bond.bondDiscount ? (
                                     <Skeleton variant="text" width={"150px"} />
                                 ) : (
